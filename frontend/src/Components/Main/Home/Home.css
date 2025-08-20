@@ -1,3 +1,54 @@
+body.dark {
+  background-color: black;
+  color: #f1f1f1;
+}
+
+body.dark .home{
+
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+}
+
+body.dark .search-container{
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border: 1.5px solid #f1f1f1;
+}
+
+body.dark .search {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border: none;
+}
+
+.body.dark .checkbox {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border: 1.5px solid #f1f1f1;
+}
+
+body.dark .parent-add-task-form {
+  background-color: rgba(46, 46, 46, 0.8);
+}
+
+body.dark #add-task-form-container {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border: 1px solid #f1f1f1;
+}
+
+body.dark .add-task-input {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border: 1.5px solid #f1f1f1;
+}
+
+body.dark .cancel-btn {
+  background-color: #2c2c2c;
+  color: #f1f1f1;
+  border: 1.2px solid #f1f1f1;
+}
+
 .home {
   margin-left: 25%;
   margin-right: 25%;
@@ -89,37 +140,35 @@
 
 /* For Chrome, Edge, Safari */
 .list-rows::-webkit-scrollbar {
-  width: 6px;               /* thin scrollbar */
+  width: 6px; /* thin scrollbar */
 }
 
 .list-rows::-webkit-scrollbar-track {
-  background: #f1f1f1;       /* track color */
+  background: #f1f1f1; /* track color */
   border-radius: 10px;
 }
 
 .list-rows::-webkit-scrollbar-thumb {
-  background: #888;          /* thumb color */
+  background: #888; /* thumb color */
   border-radius: 10px;
 }
 
 .list-rows::-webkit-scrollbar-thumb:hover {
-  background: #555;          /* thumb color on hover */
+  background: #555; /* thumb color on hover */
 }
 
 /* For Firefox */
 .list-rows {
-  scrollbar-width: thin;         /* auto | thin */
+  scrollbar-width: thin; /* auto | thin */
   scrollbar-color: #6c63ff #f1f1f1; /* thumb | track */
 }
 
-
 .list-row {
   display: flex;
- 
-  align-items: flex-start;  /* let text expand vertically */
+  justify-content: space-between;
+  align-items: flex-start; /* let text expand vertically */
   border-bottom: 1px solid #6c63ff;
   padding: 10px;
-  gap: 20px;
 }
 .row-right {
   display: flex;
@@ -127,12 +176,11 @@
   color: gray;
   justify-content: space-between;
   gap: 10px;
-                  /* space between edit & delete */
-  margin-left: auto;          /* push to far right */
-  flex-shrink: 0; 
-  
+  /* space between edit & delete */
+  /* push to far right */
+  flex-shrink: 0;
 }
-.row-right div{
+.row-right div {
   display: flex;
   cursor: pointer;
 }
@@ -140,32 +188,32 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  flex: 1;                  /* take remaining space */
-  word-wrap: break-word;   /* break long words */
-  white-space: normal;     /* allow text to wrap */
-  max-width: 250px;        /* adjust based on your layout */
-  line-height: 1.4;        /* add space between lines */
-  margin-left: 8px;
-   flex-grow: 1;              /* take all remaining space */
+  /* take remaining space */
+  word-wrap: break-word; /* break long words */
+  white-space: normal; /* allow text to wrap */
+  /* adjust based on your layout */
+  line-height: 1.4; /* add space between lines */
+  /* take all remaining space */
   min-width: 0;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .row-left div {
-  flex: 1;                   /* let text stretch fully */
-  word-break: break-word;    /* break long words */
+  /* let text stretch fully */
+  word-break: break-word; /* break long words */
 }
-
 
 .row-left input[type="checkbox"] {
-  flex-shrink: 0;           /* checkbox won’t shrink */
-  margin-top: 3px;          /* small adjust so it aligns nicely */
+  flex-shrink: 0; /* checkbox won’t shrink */
+  margin-top: 3px; /* small adjust so it aligns nicely */
 }
 
 .row-left div {
-  white-space: normal;      /* allow wrapping */
-  word-wrap: break-word;    /* break long words if needed */
-  overflow: hidden;         /* prevent x-scroll */
-  flex: 1;                  /* take remaining space */
+  white-space: normal; /* allow wrapping */
+  word-wrap: break-word; /* break long words if needed */
+  overflow: hidden; /* prevent x-scroll */
+  flex: 1; /* take remaining space */
   line-height: 1.4;
 }
 
@@ -185,7 +233,7 @@
   cursor: pointer;
 }
 
-.parent-add-task-form{
+.parent-add-task-form {
   position: fixed;
   top: 0;
   left: 0;
@@ -210,7 +258,7 @@
   display: none;
 }
 
-.add-task-input{
+.add-task-input {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -235,7 +283,7 @@
   cursor: pointer;
 }
 
-.add-task-button{
+.add-task-button {
   background-color: #6c63ff;
   color: white;
   border: none;
@@ -247,5 +295,3 @@
   border: 1.2px solid #6c63ff;
   cursor: pointer;
 }
-
-

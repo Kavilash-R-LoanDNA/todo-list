@@ -5,14 +5,13 @@ import { FiMoon } from "react-icons/fi";
 import { FiSun } from "react-icons/fi";
 import { GoPencil } from "react-icons/go";
 import { RiDeleteBinLine } from "react-icons/ri";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Home = () => {
   const [dropdown, setDropdown] = useState("All");
 
   const [searchValue, setSearchValue] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
 
   const [rowData, setRowData] = useState([]);
   const [showForm, setShowForm] = useState(false);
@@ -27,6 +26,20 @@ const Home = () => {
   //   });
   //   setSearchResults(filteredData);
   // }, [searchValue]);
+
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("darkMode");
+    return saved !== null ? JSON.parse(saved) : false;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
+    if (darkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   const filteredDataa = rowData.filter((task) => {
     const matchesSearch = task.title
@@ -164,9 +177,11 @@ const Home = () => {
         </select>
 
         {/* dark mode */}
-        <div className="dark-mode-container">
-          <FiMoon />
-          {/* <FiSun /> */}
+        <div
+          onClick={() => setDarkMode(!darkMode)}
+          className="dark-mode-container"
+        >
+          {darkMode ? <FiSun /> : <FiMoon />}
         </div>
       </div>
 
@@ -182,6 +197,7 @@ const Home = () => {
                   type="checkbox"
                   checked={row.completed}
                   onChange={() => handleToggleComplete(row)}
+                  className="checkbox"
                 />
                 <div
                   style={{
