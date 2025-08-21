@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Service;
 using Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Controller
 {
@@ -53,6 +54,7 @@ namespace Controller
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public IActionResult DeleteTask(int id)
         {
             try

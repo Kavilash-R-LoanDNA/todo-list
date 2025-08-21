@@ -139,7 +139,11 @@ const Home = () => {
 
   const handleDeleteTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:5160/api/todo/${id}`);
+      await axios.delete(`http://localhost:5160/api/todo/${id}`,{
+        headers:{
+          Authorization: `Bearer ${localStorage.getItem("token")}`
+        }
+      });
       await fetchData();
     } catch (err) {
       console.error("Error deleting task:", err);

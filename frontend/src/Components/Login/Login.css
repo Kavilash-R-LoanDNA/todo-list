@@ -1,0 +1,17 @@
+.login{
+    padding: 0px;
+    margin: 0px;
+    background-color: #f1f1f1;
+    height: 100vh;   /* full viewport height */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+   
+    background-color: #f2f2;
+    width: 400px;
+    height: 600px;
+}
